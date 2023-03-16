@@ -250,9 +250,42 @@ i {
     background-image: url(../img/mine.jpg);
     width: 100%;
     height: calc(100% - 80px - 70px);
+    padding: 40px 80px;
     border-left: 1px solid #b7b7b7;
 
     overflow-y: scroll;
+}
+
+#app #app-right #chat-body .message-wrapper {
+    display: flex;
+    justify-content: start;
+}
+
+#app #app-right #chat-body .message-wrapper.user-message-wrapper {
+    justify-content: end;
+}
+
+#app #app-right #chat-body .message-wrapper .message {
+    background-color: white;
+    /* width: 40%; */
+    display: inline;
+    margin-bottom: 10px;
+    padding: 10px 20px 20px 10px;
+    border-radius: 5px;
+
+    position: relative;
+}
+
+#app #app-right #chat-body .message-wrapper.user-message-wrapper .message {
+    background-color: #d5f9ba;
+}
+
+#app #app-right #chat-body .message-wrapper .message .message-time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    font-size: .7rem;
 }
 /* /chat-body */
 
