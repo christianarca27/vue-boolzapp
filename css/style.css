@@ -53,6 +53,8 @@
     border-radius: 50%;
 }
 /* /user-details-left */
+
+/* user-details-right */
 #app #app-left #user-details #user-details-right {
     height: 100%;
     
@@ -61,15 +63,42 @@
     align-items: center;
     gap: 10px;
 }
-/* user-details-right */
 /* /user-details-right */
 /* /user-details */
 
+/* notify-banner */
 #app #app-left #notify-banner {
-    background-color: lightblue;
+    background-color: #8edafc;
     width: 100%;
     height: 80px;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
 }
+
+#app #app-left #notify-banner #notify-icon {
+    background-color: #fff;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app #app-left #notify-banner #notify-icon {
+    color: #8edafc;
+}
+
+#app #app-left #notify-banner #notify-banner-inner {
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* /notify-banner */
 
 #app #app-left #search-bar {
     background-color: lightcoral;
