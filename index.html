@@ -119,38 +119,14 @@
 
             <!-- chat-body -->
             <div id="chat-body">
-                <div class="message-wrapper user-message-wrapper">
+                <div v-for="message in contacts[activeIndex].messages" class="message-wrapper" :class="message.status == 'sent' ? ' user-message-wrapper' : ''">
                     <div class="message user-message">
                         <div class="message-text">
-                            Hai portato a spasso il cane
+                            {{ message.message }}
                         </div>
                         
                         <div class="message-time">
-                            15:30
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="message-wrapper user-message-wrapper">
-                    <div class="message user-message">
-                        <div class="message-text">
-                            Ricordati di stendere i panni
-                        </div>
-                        
-                        <div class="message-time">
-                            15:30
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="message-wrapper">
-                    <div class="message">
-                        <div class="message-text">
-                            Tutto fatto
-                        </div>
-                        
-                        <div class="message-time">
-                            15:30
+                            {{ message.date.slice(11, 16) }}
                         </div>
                     </div>
                 </div>
