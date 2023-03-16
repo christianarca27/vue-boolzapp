@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- app-left -->
         <div id="app-left">
             <!-- user-details -->
             <div id="user-details">
@@ -56,16 +57,38 @@
             </div>
             <!-- /search-bar -->
 
+            <!-- contact-list -->
             <div id="contact-list">
+                <ul>
+                    <li v-for="contact in contactList" class="contact">
+                        <div class="contact-details">
+                            <div class="contact-details-left">
+                                <div class="contact-picture">
+                                    <img :src="contact.image" alt="contact-picture">
+                                </div>
+                            </div>
+                            <div class="contact-details-right">
+                                <div class="contact-name">{{ contact.name }}</div>
+                                <div class="contact-last-message">{{ contact.lastMessage }}</div>
+                            </div>
+                        </div>
 
+                        <div class="contact-last-message-time">{{ contact.lastMessageTime }}</div>
+                    </li>
+                </ul>
             </div>
+            <!-- /contact-list -->
         </div>
+        <!-- /app-left -->
+        
+        <!-- app-right -->
         <div id="app-right">
-            
+
         </div>
+        <!-- /app-right -->
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

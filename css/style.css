@@ -129,10 +129,49 @@
 }
 /* /search-bar */
 
+/* contact-list */
 #app #app-left #contact-list {
-    background-color: darkred;
     width: 100%;
+    height: calc(100% - 80px - 80px - 40px);
+
+    overflow-y: scroll;
 }
+
+#app #app-left #contact-list ul li.contact {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-top: 1px solid #e9ebeb;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#app #app-left #contact-list ul li.contact.active {
+    background-color: #e9ebeb;
+}
+
+#app #app-left #contact-list ul li.contact .contact-details {
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+
+#app #app-left #contact-list ul li.contact .contact-details .contact-details-left .contact-picture {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+#app #app-left #contact-list ul li.contact .contact-details .contact-details-left .contact-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* /contact-list */
 /* /app-left */
 
 /* app-right */
