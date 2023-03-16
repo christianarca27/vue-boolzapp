@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: sans-serif;
+}
+
+i {
+    font-size: 30px;
+    color: #959595;
+}
+
 /* app */
 #app {
     width: 100vw;
@@ -240,7 +249,7 @@
 #app #app-right #chat-body {
     background-image: url(../img/mine.jpg);
     width: 100%;
-    height: calc(100% - 80px - 80px);
+    height: calc(100% - 80px - 70px);
     border-left: 1px solid #b7b7b7;
 
     overflow-y: scroll;
@@ -251,8 +260,22 @@
 #app #app-right #chat-input {
     background-color: #d3cecb;
     width: 100%;
-    height: 80px;
+    height: 70px;
+    padding: 10px 20px;
     border-left: 1px solid #b7b7b7;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#app #app-right #chat-input input {
+    width: 80%;
+    height: 100%;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 5px;
 }
 /* /chat-input */
 /* /app-right */
