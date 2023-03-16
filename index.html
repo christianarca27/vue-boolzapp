@@ -83,7 +83,45 @@
         
         <!-- app-right -->
         <div id="app-right">
+            <div id="chat-header">
+                <!-- contact-details -->
+                <div id="contact-details">
+                    <!-- contact-details-left -->
+                    <div id="contact-details-left">
+                        <div id="contact-picture">
+                            <img :src="contacts[activeIndex].avatar" alt="profile picture">
+                        </div>
+        
+                        <div id="contact-details-left-inner">
+                            <div id="contact-name">
+                                {{ contacts[activeIndex].name }}
+                            </div>
 
+                            <div id="last-login">
+                                Ultimo accesso oggi alle 12:00
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /contact-details-left -->
+
+                    <!-- contact-details-right -->
+                    <div id="contact-details-right">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <!-- /contact-details-right -->
+                </div>
+                <!-- /contact-details -->
+            </div>
+
+            <div id="chat-body">
+                
+            </div>
+
+            <div id="chat-input">
+                
+            </div>
         </div>
         <!-- /app-right -->
     </div>
