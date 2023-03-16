@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* app */
+#app {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* app-left */
+#app #app-left {
+    width: 30%;
+    height: 100%;
+}
+
+/* user-details */
+#app #app-left #user-details {
+    background-color: #eaeaea;
+    width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* user-details-left */
+#app #app-left #user-details #user-details-left {
+    height: 100%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+#app #app-left #user-details #user-details-left #user-picture {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+#app #app-left #user-details #user-details-left #user-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+/* /user-details-left */
+#app #app-left #user-details #user-details-right {
+    height: 100%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+/* user-details-right */
+/* /user-details-right */
+/* /user-details */
+
+#app #app-left #notify-banner {
+    background-color: lightblue;
+    width: 100%;
+    height: 80px;
+}
+
+#app #app-left #search-bar {
+    background-color: lightcoral;
+    width: 100%;
+    height: 50px;
+}
+
+#app #app-left #contact-list {
+    background-color: darkred;
+    width: 100%;
+}
+/* /app-left */
+
+/* app-right */
+#app #app-right {
+    width: 70%;
+    height: 100%;
+}
+/* /app-right */
+/* /app */
