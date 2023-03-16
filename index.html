@@ -60,20 +60,20 @@
             <!-- contact-list -->
             <div id="contact-list">
                 <ul>
-                    <li v-for="contact in contactList" class="contact">
+                    <li v-for="contact in contacts" class="contact">
                         <div class="contact-details">
                             <div class="contact-details-left">
                                 <div class="contact-picture">
-                                    <img :src="contact.image" alt="contact-picture">
+                                    <img :src="contact.avatar" alt="contact-picture">
                                 </div>
                             </div>
                             <div class="contact-details-right">
                                 <div class="contact-name">{{ contact.name }}</div>
-                                <div class="contact-last-message">{{ contact.lastMessage }}</div>
+                                <div class="contact-last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
                             </div>
                         </div>
 
-                        <div class="contact-last-message-time">{{ contact.lastMessageTime }}</div>
+                        <div class="contact-last-message-time">{{ contact.messages[contact.messages.length - 1].date }}</div>
                     </li>
                 </ul>
             </div>
