@@ -148,6 +148,10 @@
     justify-content: space-between;
 }
 
+#app #app-left #contact-list ul li.contact:hover {
+    cursor: pointer;
+}
+
 #app #app-left #contact-list ul li.contact.active {
     background-color: #e9ebeb;
 }
