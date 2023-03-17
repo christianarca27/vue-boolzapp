@@ -14,90 +14,92 @@
 </head>
 <body>
     <div id="app">
-        <!-- app-left -->
-        <div id="app-left">
-            <!-- user-details -->
-            <div id="user-details">
-                <!-- user-details-left -->
-                <div id="user-details-left">
-                    <div id="user-picture">
-                        <img src="https://picsum.photos/200" alt="profile picture">
+        <div id="background-top"></div>
+
+        <!-- app-inner -->
+        <div id="app-inner">
+            <!-- app-left -->
+            <div id="app-inner-left">
+                <!-- user -->
+                <div id="user">
+                    <!-- user-details -->
+                    <div id="user-details">
+                        <div id="user-picture">
+                            <img src="https://picsum.photos/200" alt="profile picture">
+                        </div>
+        
+                        <div id="user-name">
+                            <b>Christian</b>
+                        </div>
+                    </div>
+                    <!-- /user-details -->
+    
+                    <!-- user-commands -->
+                    <div id="user-commands">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <!-- /user-commands -->
+                </div>
+                <!-- /user -->
+    
+                <!-- notify-banner -->
+                <div id="notify-banner">
+                    <div id="notify-icon">
+                        <i class="fa-solid fa-bell-slash"></i>
                     </div>
     
-                    <div id="user-name">
-                        <b>Christian</b>
+                    <div id="notify-banner-text">
+                        <strong>Ricevi notifiche di nuovi messaggi</strong>
+                        <span>Attiva notifiche desktop</span>
                     </div>
                 </div>
-                <!-- /user-details-left -->
-
-                <!-- user-details-right -->
-                <div id="user-details-right">
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                <!-- /notify-banner -->
+    
+                <!-- search-bar -->
+                <div id="search-bar">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <!-- /user-details-right -->
-            </div>
-            <!-- /user-details -->
-
-            <!-- notify-banner -->
-            <div id="notify-banner">
-                <div id="notify-icon">
-                    <i class="fa-solid fa-bell-slash"></i>
-                </div>
-
-                <div id="notify-banner-inner">
-                    <strong>Ricevi notifiche di nuovi messaggi</strong>
-                    <span>Attiva notifiche desktop</span>
-                </div>
-            </div>
-            <!-- /notify-banner -->
-
-            <!-- search-bar -->
-            <div id="search-bar">
-                <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
-            </div>
-            <!-- /search-bar -->
-
-            <!-- contact-list -->
-            <div id="contact-list">
-                <ul>
-                    <li v-for="(contact, index) in contacts" class="contact" :class="index == activeIndex ? 'active' : ''" @click="activeIndex = index">
-                        <div class="contact-details">
-                            <div class="contact-details-left">
-                                <div class="contact-picture">
-                                    <img :src="contact.avatar" alt="contact-picture">
+                <!-- /search-bar -->
+    
+                <!-- contact-list -->
+                <div id="contact-list">
+                    <ul>
+                        <li v-for="(contact, index) in contacts" class="contact" :class="index == activeIndex ? 'active' : ''" @click="activeIndex = index">
+                            <div class="contact-details">
+                                <div class="contact-details-left">
+                                    <div class="contact-picture">
+                                        <img :src="contact.avatar" alt="contact-picture">
+                                    </div>
+                                </div>
+                                <div class="contact-details-right">
+                                    <div class="contact-name"><b>{{ contact.name }}</b></div>
+                                    <div class="contact-last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
                                 </div>
                             </div>
-                            <div class="contact-details-right">
-                                <div class="contact-name"><b>{{ contact.name }}</b></div>
-                                <div class="contact-last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
-                            </div>
-                        </div>
-
-                        <div class="contact-last-message-time">{{ contact.messages[contact.messages.length - 1].date.slice(11, 16) }}</div>
-                    </li>
-                </ul>
+    
+                            <div class="contact-last-message-time">{{ contact.messages[contact.messages.length - 1].date.slice(11, 16) }}</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /contact-list -->
             </div>
-            <!-- /contact-list -->
-        </div>
-        <!-- /app-left -->
-        
-        <!-- app-right -->
-        <div id="app-right">
-            <!-- chat-header -->
-            <div id="chat-header">
-                <!-- contact-details -->
-                <div id="contact-details">
-                    <!-- contact-details-left -->
-                    <div id="contact-details-left">
-                        <div id="contact-picture">
+            <!-- /app-left -->
+            
+            <!-- app-right -->
+            <div id="app-inner-right">
+                <!-- chat-header -->
+                <div id="chat-header">
+                    <!-- chat-header-left -->
+                    <div id="chat-header-left">
+                        <div id="chat-picture">
                             <img :src="contacts[activeIndex].avatar" alt="profile picture">
                         </div>
         
-                        <div id="contact-details-left-inner">
-                            <div id="contact-name">
+                        <div id="chat-header-left-inner">
+                            <div id="chat-name">
                                 <b>{{ contacts[activeIndex].name }}</b>
                             </div>
 
@@ -106,24 +108,21 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /contact-details-left -->
+                    <!-- /chat-header-left -->
 
-                    <!-- contact-details-right -->
-                    <div id="contact-details-right">
+                    <!-- chat-header-right -->
+                    <div id="chat-header-right">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-                    <!-- /contact-details-right -->
+                    <!-- /chat-header-right -->
                 </div>
-                <!-- /contact-details -->
-            </div>
-            <!-- /chat-header -->
-
-            <!-- chat-body -->
-            <div id="chat-body">
-                <div v-for="message in contacts[activeIndex].messages" class="message-wrapper" :class="message.status == 'sent' ? ' user-message-wrapper' : ''">
-                    <div class="message user-message">
+                <!-- /chat-header -->
+    
+                <!-- chat-body -->
+                <div id="chat-body">
+                    <div v-for="message in contacts[activeIndex].messages" class="message" :class="message.status">
                         <div class="message-text">
                             {{ message.message }}
                         </div>
@@ -133,20 +132,21 @@
                         </div>
                     </div>
                 </div>
+                <!-- /chat-body -->
+    
+                <!-- chat-input -->
+                <div id="chat-input">
+                    <i class="fa-regular fa-face-smile"></i>
+    
+                    <input @keyup.enter="sendMessage()" v-model="input" type="text" placeholder="Scrivi un messaggio">
+    
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <!-- /chat-input -->
             </div>
-            <!-- /chat-body -->
-
-            <!-- chat-input -->
-            <div id="chat-input">
-                <i class="fa-regular fa-face-smile"></i>
-
-                <input type="text" placeholder="Scrivi un messaggio">
-
-                <i class="fa-solid fa-microphone"></i>
-            </div>
-            <!-- /chat-input -->
+            <!-- /app-right -->
         </div>
-        <!-- /app-right -->
+        <!-- /app-inner -->
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>

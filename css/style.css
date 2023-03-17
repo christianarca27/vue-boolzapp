@@ -5,6 +5,8 @@
 }
 
 body {
+    background-color: #d8dbd5;
+    
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -17,19 +19,37 @@ i {
 #app {
     width: 100vw;
     height: 100vh;
+}
+
+#app #background-top {
+    background-color: #009688;
+    height: 150px;
+}
+
+/* app-inner */
+#app #app-inner {
+    width: 90%;
+    height: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
 
     display: flex;
     flex-flow: row nowrap;
 }
 
-/* app-left */
-#app #app-left {
+/* app-inner-left */
+#app #app-inner #app-inner-left {
     width: 30%;
     height: 100%;
 }
 
-/* user-details */
-#app #app-left #user-details {
+/* user */
+#user {
     background-color: #eaeaea;
     width: 100%;
     height: 80px;
@@ -40,8 +60,8 @@ i {
     justify-content: space-between;
 }
 
-/* user-details-left */
-#app #app-left #user-details #user-details-left {
+/* user-details */
+#user #user-details {
     height: 100%;
     
     display: flex;
@@ -50,22 +70,22 @@ i {
     gap: .5rem;
 }
 
-#app #app-left #user-details #user-details-left #user-picture {
+#user #user-details #user-picture {
     height: 100%;
     aspect-ratio: 1;
 }
 
-#app #app-left #user-details #user-details-left #user-picture img {
+#user #user-details #user-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
     border-radius: 50%;
 }
-/* /user-details-left */
+/* /user-details */
 
-/* user-details-right */
-#app #app-left #user-details #user-details-right {
+/* user-commands */
+#user #user-commands {
     height: 100%;
     
     display: flex;
@@ -73,11 +93,11 @@ i {
     align-items: center;
     gap: 1.5rem;
 }
-/* /user-details-right */
-/* /user-details */
+/* /user-commands */
+/* /user */
 
 /* notify-banner */
-#app #app-left #notify-banner {
+#notify-banner {
     background-color: #8edafc;
     width: 100%;
     height: 80px;
@@ -89,7 +109,7 @@ i {
     gap: .5rem;
 }
 
-#app #app-left #notify-banner #notify-icon {
+#notify-banner #notify-icon {
     background-color: #fff;
     height: 100%;
     aspect-ratio: 1;
@@ -100,16 +120,16 @@ i {
     align-items: center;
 }
 
-#app #app-left #notify-banner #notify-icon i {
+#notify-banner #notify-icon i {
     color: #8edafc;
 }
 
-#app #app-left #notify-banner #notify-banner-inner {
+#notify-banner #notify-banner-text {
     display: flex;
     flex-flow: column nowrap;
 }
 
-#app #app-left #notify-banner #notify-banner-inner span {
+#notify-banner #notify-banner-text span {
     font-size: .8rem;
     opacity: .7;
     text-decoration: underline;
@@ -117,7 +137,7 @@ i {
 /* /notify-banner */
 
 /* search-bar */
-#app #app-left #search-bar {
+#search-bar {
     background-color: #fafafa;
     width: 100%;
     height: 40px;
@@ -127,7 +147,7 @@ i {
     flex-flow: row nowrap;
 }
 
-#app #app-left #search-bar span {
+#search-bar span {
     background-color: white;
     width: 20%;
     height: 100%;
@@ -137,11 +157,11 @@ i {
     align-items: center;
 }
 
-#app #app-left #search-bar span i {
+#search-bar span i {
     font-size: 1rem;
 }
 
-#app #app-left #search-bar input {
+#search-bar input {
     width: 80%;
     height: 100%;
     padding: 0 5px;
@@ -150,14 +170,15 @@ i {
 /* /search-bar */
 
 /* contact-list */
-#app #app-left #contact-list {
+#contact-list {
+    background-color: white;
     width: 100%;
     height: calc(100% - 80px - 80px - 40px);
 
     overflow-y: scroll;
 }
 
-#app #app-left #contact-list ul li.contact {
+#contact-list ul li.contact {
     width: 100%;
     height: 80px;
     padding: 10px;
@@ -166,17 +187,21 @@ i {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-}
-
-#app #app-left #contact-list ul li.contact:hover {
+    
     cursor: pointer;
 }
 
-#app #app-left #contact-list ul li.contact.active {
+#contact-list ul li.contact:hover {
     background-color: #e9ebeb;
+    border-color: white;
 }
 
-#app #app-left #contact-list ul li.contact .contact-details {
+#contact-list ul li.contact.active {
+    background-color: #e9ebeb;
+    border-color: white;
+}
+
+#contact-list ul li.contact .contact-details {
     height: 100%;
 
     display: flex;
@@ -184,48 +209,43 @@ i {
     gap: 10px;
 }
 
-#app #app-left #contact-list ul li.contact .contact-details .contact-details-left .contact-picture {
+#contact-list ul li.contact .contact-details .contact-details-left .contact-picture {
     height: 100%;
     aspect-ratio: 1;
 }
 
-#app #app-left #contact-list ul li.contact .contact-details .contact-details-left .contact-picture img {
+#contact-list ul li.contact .contact-details .contact-details-left .contact-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
 
-#app #app-left #contact-list ul li.contact .contact-details .contact-details-right .contact-last-message {
+#contact-list ul li.contact .contact-details .contact-details-right .contact-last-message {
     font-size: .8rem;
     opacity: .7;
 }
 
-#app #app-left #contact-list ul li.contact .contact-last-message-time {
+#contact-list ul li.contact .contact-last-message-time {
     font-size: .8rem;
     opacity: .7;
 }
 /* /contact-list */
-/* /app-left */
+/* /app-inner-left */
 
-/* app-right */
-#app #app-right {
+/* app-inner-right */
+#app #app-inner-right {
     width: 70%;
     height: 100%;
 }
 
 /* chat-header */
-#app #app-right #chat-header {
+#chat-header {
     background-color: #eaeaea;
     width: 100%;
     height: 80px;
-    border-left: 1px solid #b7b7b7;
-}
-
-#app #app-right #chat-header #contact-details {
-    width: 100%;
-    height: 100%;
     padding: 10px 20px;
+    border-left: 1px solid #b7b7b7;
 
     display: flex;
     flex-flow: row nowrap;
@@ -233,7 +253,8 @@ i {
     align-items: center;
 }
 
-#app #app-right #chat-header #contact-details #contact-details-left {
+/* chat-header-left */
+#chat-header #chat-header-left {
     height: 100%;
     
     display: flex;
@@ -242,70 +263,72 @@ i {
     gap: .5rem;
 }
 
-#app #app-right #chat-header #contact-details #contact-details-left #contact-picture {
+#chat-header #chat-header-left #chat-picture {
     height: 100%;
 }
 
-#app #app-right #chat-header #contact-details #contact-details-left #contact-picture img {
+#chat-header #chat-header-left #chat-picture img {
     height: 100%;
     aspect-ratio: 1;
     object-fit: contain;
     border-radius: 50%;
 }
 
-#app #app-right #chat-header #contact-details #contact-details-left #contact-details-left-inner {
+#chat-header #chat-header-left #chat-header-left-inner {
     display: flex;
     flex-flow: column nowrap;
 }
 
-#app #app-right #chat-header #contact-details #contact-details-left #contact-details-left-inner #last-login {
+#chat-header #chat-header-left #chat-header-left-inner #last-login {
     font-size: .8rem;
     opacity: .7;
 }
+/* /chat-header-left */
 
-#app #app-right #chat-header #contact-details #contact-details-right {
+/* chat-header-right */
+#chat-header #chat-header-right {
     display: flex;
     flex-flow: row nowrap;
     gap: 1.5rem;
 }
+/* /chat-header-right */
 /* /chat-header */
 
 /* chat-body */
-#app #app-right #chat-body {
+#chat-body {
     background-image: url(../img/mine.jpg);
     width: 100%;
     height: calc(100% - 80px - 70px);
     padding: 2rem 4rem;
     border-left: 1px solid #b7b7b7;
 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
     overflow-y: scroll;
 }
 
-#app #app-right #chat-body .message-wrapper {
-    display: flex;
-    justify-content: start;
-}
-
-#app #app-right #chat-body .message-wrapper.user-message-wrapper {
-    justify-content: end;
-}
-
-#app #app-right #chat-body .message-wrapper .message {
+#chat-body .message {
     background-color: white;
-    /* width: 40%; */
-    display: inline;
+    max-width: 70%;
     margin-bottom: .7rem;
     padding: 1rem 4rem 1rem 1rem;
     border-radius: 10px;
 
     position: relative;
+
+    display: flex;
+    justify-content: start;
 }
 
-#app #app-right #chat-body .message-wrapper.user-message-wrapper .message {
+#chat-body .message.sent {
     background-color: #d5f9ba;
+
+    align-self: flex-end;
 }
 
-#app #app-right #chat-body .message-wrapper .message .message-time {
+#chat-body .message .message-time {
     position: absolute;
     bottom: .5rem;
     right: .5rem;
@@ -316,7 +339,7 @@ i {
 /* /chat-body */
 
 /* chat-input */
-#app #app-right #chat-input {
+#chat-input {
     background-color: #f3eeea;
     width: 100%;
     height: 70px;
@@ -329,11 +352,11 @@ i {
     align-items: center;
 }
 
-#app #app-right #chat-input i {
+#chat-input i {
     color: #6b7376;
 }
 
-#app #app-right #chat-input input {
+#chat-input input {
     width: 80%;
     height: 100%;
     padding: 0 1rem;
@@ -341,5 +364,6 @@ i {
     border-radius: 5px;
 }
 /* /chat-input */
-/* /app-right */
+/* /app-inner-right */
+/* /app-inner */
 /* /app */
