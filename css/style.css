@@ -5,12 +5,12 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 i {
-    font-size: 30px;
-    color: #959595;
+    font-size: 1.5rem;
+    color: #b1b1b1;
 }
 
 /* app */
@@ -47,6 +47,7 @@ i {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    gap: .5rem;
 }
 
 #app #app-left #user-details #user-details-left #user-picture {
@@ -70,7 +71,7 @@ i {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 10px;
+    gap: 1.5rem;
 }
 /* /user-details-right */
 /* /user-details */
@@ -85,7 +86,7 @@ i {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 10px;
+    gap: .5rem;
 }
 
 #app #app-left #notify-banner #notify-icon {
@@ -99,13 +100,19 @@ i {
     align-items: center;
 }
 
-#app #app-left #notify-banner #notify-icon {
+#app #app-left #notify-banner #notify-icon i {
     color: #8edafc;
 }
 
 #app #app-left #notify-banner #notify-banner-inner {
     display: flex;
     flex-flow: column nowrap;
+}
+
+#app #app-left #notify-banner #notify-banner-inner span {
+    font-size: .8rem;
+    opacity: .7;
+    text-decoration: underline;
 }
 /* /notify-banner */
 
@@ -114,7 +121,7 @@ i {
     background-color: #fafafa;
     width: 100%;
     height: 40px;
-    padding: 5px;
+    padding: .3rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -122,7 +129,7 @@ i {
 
 #app #app-left #search-bar span {
     background-color: white;
-    width: 10%;
+    width: 20%;
     height: 100%;
 
     display: flex;
@@ -130,8 +137,12 @@ i {
     align-items: center;
 }
 
+#app #app-left #search-bar span i {
+    font-size: 1rem;
+}
+
 #app #app-left #search-bar input {
-    width: 90%;
+    width: 80%;
     height: 100%;
     padding: 0 5px;
     border: 1px solid #fafafa;
@@ -184,6 +195,16 @@ i {
     object-fit: cover;
     border-radius: 50%;
 }
+
+#app #app-left #contact-list ul li.contact .contact-details .contact-details-right .contact-last-message {
+    font-size: .8rem;
+    opacity: .7;
+}
+
+#app #app-left #contact-list ul li.contact .contact-last-message-time {
+    font-size: .8rem;
+    opacity: .7;
+}
 /* /contact-list */
 /* /app-left */
 
@@ -218,7 +239,7 @@ i {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 10px;
+    gap: .5rem;
 }
 
 #app #app-right #chat-header #contact-details #contact-details-left #contact-picture {
@@ -235,13 +256,17 @@ i {
 #app #app-right #chat-header #contact-details #contact-details-left #contact-details-left-inner {
     display: flex;
     flex-flow: column nowrap;
-    gap: 5px;
+}
+
+#app #app-right #chat-header #contact-details #contact-details-left #contact-details-left-inner #last-login {
+    font-size: .8rem;
+    opacity: .7;
 }
 
 #app #app-right #chat-header #contact-details #contact-details-right {
     display: flex;
     flex-flow: row nowrap;
-    gap: 10px;
+    gap: 1.5rem;
 }
 /* /chat-header */
 
@@ -250,7 +275,7 @@ i {
     background-image: url(../img/mine.jpg);
     width: 100%;
     height: calc(100% - 80px - 70px);
-    padding: 40px 80px;
+    padding: 2rem 4rem;
     border-left: 1px solid #b7b7b7;
 
     overflow-y: scroll;
@@ -269,9 +294,9 @@ i {
     background-color: white;
     /* width: 40%; */
     display: inline;
-    margin-bottom: 10px;
-    padding: 10px 20px 20px 10px;
-    border-radius: 5px;
+    margin-bottom: .7rem;
+    padding: 1rem 4rem 1rem 1rem;
+    border-radius: 10px;
 
     position: relative;
 }
@@ -282,19 +307,20 @@ i {
 
 #app #app-right #chat-body .message-wrapper .message .message-time {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: .5rem;
+    right: .5rem;
 
-    font-size: .7rem;
+    font-size: .8rem;
+    opacity: .7;
 }
 /* /chat-body */
 
 /* chat-input */
 #app #app-right #chat-input {
-    background-color: #d3cecb;
+    background-color: #f3eeea;
     width: 100%;
     height: 70px;
-    padding: 10px 20px;
+    padding: .7rem 1rem;
     border-left: 1px solid #b7b7b7;
 
     display: flex;
@@ -303,10 +329,14 @@ i {
     align-items: center;
 }
 
+#app #app-right #chat-input i {
+    color: #6b7376;
+}
+
 #app #app-right #chat-input input {
     width: 80%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 1rem;
     border: 0;
     border-radius: 5px;
 }
