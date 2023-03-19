@@ -166,11 +166,40 @@ const { createApp } = Vue
                 ],
             }
         ],
+
         activeIndex: 0,
+
+        input: "",
       }
     },
 
     methods: {
-        
+        setActiveContact(index) {
+            this.activeIndex = index;
+        },
+
+        sendMessage() {
+            const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
+
+            let newMessage = {
+                date: today,
+                message: this.input,
+                status: 'sent'
+            };
+            this.input = "";
+
+            this.contacts[this.activeIndex].messages.push(newMessage);
+
+            setTimeout(() => {
+                const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
+
+                let newMessage = {
+                date: today,
+                message: 'Ok',
+                status: 'received'
+            };
+                this.contacts[this.activeIndex].messages.push(newMessage);
+            }, 1000)
+        }
     }
   }).mount('#app')
