@@ -336,6 +336,47 @@ i {
     font-size: .8rem;
     opacity: .7;
 }
+
+#chat-body .message .message-options i {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#chat-body .message:hover .message-options i {
+    display: block;
+}
+
+#chat-body .message .message-options ul {
+    display: none;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid lightgray;
+
+    flex-flow: column nowrap;
+    gap: 1rem;
+    
+    position: absolute;
+    top: calc(50% + .5rem);
+    right: .5rem;
+    z-index: 1;
+
+    list-style-type: none;
+    font-size: 0.9rem;
+}
+
+#chat-body .message .message-options ul li {
+    cursor: pointer;
+}
+
+#chat-body .message .message-options:hover ul {
+    display: flex;
+}
 /* /chat-body */
 
 /* chat-input */

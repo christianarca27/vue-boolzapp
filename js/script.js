@@ -210,6 +210,10 @@ const { createApp } = Vue
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.keywordsContact.toLowerCase());
             });
+        },
+
+        deleteMessage(index) {
+            this.contacts[this.activeIndex].messages.splice(index, 1);
         }
     }
   }).mount('#app')

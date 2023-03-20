@@ -122,13 +122,22 @@
     
                 <!-- chat-body -->
                 <div id="chat-body">
-                    <div v-for="message in contacts[activeIndex].messages" class="message" :class="message.status">
+                    <div v-for="(message, index) in contacts[activeIndex].messages" class="message" :class="message.status">
                         <div class="message-text">
                             {{ message.message }}
                         </div>
                         
                         <div class="message-time">
                             {{ message.date.slice(11, 16) }}
+                        </div>
+
+                        <div class="message-options">
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                            <ul>
+                                <li>Message info</li>
+                                <li @click="deleteMessage(index)">Delete message</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
