@@ -179,6 +179,8 @@ const { createApp } = Vue
         },
 
         sendMessage() {
+            const currentContact = this.activeIndex;
+
             const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
 
             let newMessage = {
@@ -188,7 +190,7 @@ const { createApp } = Vue
             };
             this.input = "";
 
-            this.contacts[this.activeIndex].messages.push(newMessage);
+            this.contacts[currentContact].messages.push(newMessage);
 
             setTimeout(() => {
                 const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
@@ -198,7 +200,7 @@ const { createApp } = Vue
                 message: 'Ok',
                 status: 'received'
             };
-                this.contacts[this.activeIndex].messages.push(newMessage);
+                this.contacts[currentContact].messages.push(newMessage);
             }, 1000)
         }
     }
