@@ -170,6 +170,8 @@ const { createApp } = Vue
         activeIndex: 0,
 
         input: "",
+
+        keywordsContact: ""
       }
     },
 
@@ -202,6 +204,12 @@ const { createApp } = Vue
             };
                 this.contacts[currentContact].messages.push(newMessage);
             }, 1000)
+        },
+
+        filterContacts() {
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(this.keywordsContact.toLowerCase());
+            });
         }
     }
   }).mount('#app')
