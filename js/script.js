@@ -181,29 +181,27 @@ const { createApp } = Vue
         },
 
         sendMessage() {
-            const currentContact = this.activeIndex;
-
-            const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
-
-            let newMessage = {
-                date: today,
-                message: this.input,
-                status: 'sent'
-            };
-            this.input = "";
-
-            this.contacts[currentContact].messages.push(newMessage);
-
-            setTimeout(() => {
-                const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
-
+            if(this.isValidInput()) {
+                let currentContact = this.activeIndex;
                 let newMessage = {
-                date: today,
-                message: 'Ok',
-                status: 'received'
-            };
+                    date: luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss"),
+                    message: this.input,
+                    status: 'sent'
+                };
                 this.contacts[currentContact].messages.push(newMessage);
-            }, 1000)
+                this.input = "";
+
+                setTimeout(() => {
+                    const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
+
+                    let newMessage = {
+                    date: today,
+                    message: 'Ok',
+                    status: 'received'
+                };
+                    this.contacts[currentContact].messages.push(newMessage);
+                }, 1000)
+            }
         },
 
         filterContacts() {
@@ -214,6 +212,25 @@ const { createApp } = Vue
 
         deleteMessage(index) {
             this.contacts[this.activeIndex].messages.splice(index, 1);
+        },
+        
+        isValidInput() {
+            if(this.input == "") {
+                return false;
+            }
+
+            for(let i = 0; i < this.input.length; i++) {
+                if(this.input[i] != " ") {
+                    return true;
+                }
+            }
+            
+            return false;
         }
     }
   }).mount('#app')
+
+
+
+
+//   ------------------------- FUNCTIONS -------------------------   //
