@@ -13,6 +13,7 @@ body {
 i {
     font-size: 1.5rem;
     color: #b1b1b1;
+    cursor: pointer;
 }
 
 /* app */
