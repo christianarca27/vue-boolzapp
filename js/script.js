@@ -191,6 +191,11 @@ const { createApp } = Vue
                 this.contacts[currentContact].messages.push(newMessage);
                 this.input = "";
 
+                const newFirstContact = this.contacts.splice(currentContact, 1)[0];
+                this.contacts.unshift(newFirstContact);
+                this.activeIndex = 0;
+                currentContact = this.activeIndex;
+
                 setTimeout(() => {
                     const today = luxon.DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
 
